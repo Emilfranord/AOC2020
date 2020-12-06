@@ -4,26 +4,22 @@ String[] inp;
 void setup() {
   inp = loadStrings("input.txt");
   //inp = convert(inp);
-  println(totalCountTwo(inp));
+  println("Part one: "+totalCountOne(inp));
+  println("Part two: "+totalCountTwo(inp));
 }
 
 void draw() {
 }
-
-
 
 int totalCountOne(String[] inp) {
   int count =0;
 
   for (String q : inp) {
     count+= yesInGroup(q);
-    //println(yesInGroup(q));
   }
-
 
   return count;
 }
-
 
 int yesInGroup(String inp) {
   char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray(); // https://stackoverflow.com/questions/17575840/better-way-to-generate-array-of-all-letters-in-the-alphabet
@@ -46,21 +42,14 @@ String[] convert(String[] inp) {
 
 int everyoneYes(String[] inp) { // gets the right input, does the wrong thing.
   char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-  int yesToChar =0;
-  int count = 0;
-
-  for (char q : alphabet) {
-    for (String p : inp) {
-      if (p.indexOf(q) != -1) {
-        yesToChar++;
-      }
+  int count =0;
+  for (char p : alphabet) {
+    int charSeen = 0;
+    for (String q : inp) {
+      if(q.indexOf(p) != -1){charSeen++;}
     }
-    if (yesToChar == inp.length-1) {
-      count++;
-    }
-    yesToChar = 0;
+    if(charSeen == inp.length){count++;}
   }
-
   return count;
 }
 
@@ -74,21 +63,15 @@ int totalCountTwo(String[] inp) {
       String[] temp = Arrays.copyOfRange(inp, startIndex, i);
       count+= everyoneYes(temp);
       startIndex = i+1;
-
-      printArray(temp);
     }
   }
   String[] temp = Arrays.copyOfRange(inp, startIndex, inp.length);
   count+= everyoneYes(temp);
 
-  printArray(temp);
+  //printArray(temp);
 
   return count;
 }
-
-
-
-
 
 String[] cleanInput(String[] inp) {
   ArrayList<String> temp = new ArrayList<String>();
