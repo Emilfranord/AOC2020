@@ -7,6 +7,7 @@ void setup() {
   inp = loadStrings("input.txt");
   long [] inpPrime = listInt(inp);
   println(fitstFailure(inpPrime, 25));
+  println(weakness(inpPrime, 25));
 }
 
 
@@ -56,14 +57,30 @@ boolean contains(long [] input, long  search ) {
 }
 
 
+long weakness(long[] inp, int preamble) {
+  long goal = fitstFailure(inp, preamble);
 
-//long weakness(long[] inp){
-//  long goal = fitstFailure(inp, 25);
+  for (int i = 0; i<inp.length; i++) {
+    for (int j = 1; j<inp.length; j++) {
+      if(sum(inp, i,j) == goal){
+        
+        long[] temp = Arrays.copyOfRange(inp, i, j);
+        Arrays.sort(temp);
+        
+        return temp[0] + temp[temp.length-1];
+      }
+      
+    }
+  }
   
-//  does inp[i] + inp[i+1] = goal, for all i? no
-//  does .... + inp[i+2] = goal, for all i ? no
-  
-  
-  
+  return -1;
+}
 
-//}
+long sum(long[] inp, int low, int hi) {
+  long temp= 0;
+  for (int i = low; i<hi; i++) {
+    //println(i, inp[i]);
+    temp+=inp[i];
+  }
+  return temp;
+}
