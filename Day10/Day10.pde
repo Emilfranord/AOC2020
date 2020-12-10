@@ -17,18 +17,23 @@ int [] listInt(String[] inp) {
   return temp;
 }
 
-
-
 int adapter(int[] inp) {
-  inp = sort(inp);
+  ArrayList<Integer> inpA = new ArrayList<Integer>(inp.length);
+  for(int q : inp){
+    inpA.add(q);
+  }
+  
   int diffOne = 0;
   int diffThree =0;
 
   int lower = 0;
   int devise = 3+ max(inp);
-
-
-  println();
+  
+  inpA.add(lower);
+  inpA.add(devise);
+  
+  //sort(inpA);
+  
 
   if (inp[0]-lower == 3) {
     diffThree++;
@@ -38,7 +43,7 @@ int adapter(int[] inp) {
   }
 
   for (int i = 0; i<inp.length-1; i++) {
-    println(inp[i+1]-inp[i]);
+    //println(inp[i+1]-inp[i]);
 
     if (inp[i+1]-inp[i] == 3) {
       diffThree++;
@@ -49,8 +54,6 @@ int adapter(int[] inp) {
   }
   diffThree++; // the last adapter to the device. 
 
-
-
-  println(diffOne, diffThree);
+  //println(diffOne, diffThree);
   return diffOne * diffThree;
 }
