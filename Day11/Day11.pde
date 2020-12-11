@@ -6,11 +6,11 @@ void setup() {
   inp = loadStrings("input.txt");
   inpc = changeFormat(inp);
 
-  for (int i = 0; i<10; i++ ) {
+  for (int i = 0; i<200; i++ ) {
     inpc = nextRound(inpc);
     println(countSeats(inpc));
   }
-  
+
   //println("There are this many seats: "+countSeats(inpc));
 }
 
@@ -35,6 +35,13 @@ char[][] nextRound(char[][] inp ) {
 
   for (int i  = 0; i<inp.length; i++) {
     for (int j = 0; j<inp[0].length; j++) {
+      temp[i][j] = inp[i][j];
+    }
+  }
+
+  for (int i  = 0; i<inp.length; i++) {
+    for (int j = 0; j<inp[0].length; j++) {
+
       if (inp[i][j] != '.') {
 
         int adj = countAdjacent(inp, i, j);
@@ -86,19 +93,19 @@ int countAdjacent(char[][] inp, int i, int j) {
     }
   }
 
-  if (i!=0 && j!= inp.length-1) {// changed from 2
+  if (i!=0 && j!= inp[i].length-1) {// changed from 2
     if (inp[i-1][j+1]== '#') {
       count++;
     }
   }
 
-  if (j!= inp.length-1) { // changed from 2
+  if (j!= inp[0].length-1) { // changed from 2
     if (inp[i][j+1]== '#') {
       count++;
     }
   }
 
-  if (i!= inp.length-1 && j!= inp.length-1) {
+  if (i!= inp.length-1 && j!= inp[0].length-1) {
     if (inp[i+1][j+1]== '#') {
       count++;
     }
@@ -110,7 +117,6 @@ int countAdjacent(char[][] inp, int i, int j) {
 int countSeats(char[][] inp) {
   int count = 0; 
   //println(inp.length, inp[0].length);
-
   for (int i = 0; i<inp.length; i++) {
     for (int j = 0; j<inp[0].length; j++) {
       if (inp[i][j] == '#') {
@@ -118,7 +124,6 @@ int countSeats(char[][] inp) {
       }
     }
   }
-
 
   return count;
 }
