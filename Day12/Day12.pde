@@ -121,7 +121,7 @@ int interpreteWaypoint(String[] inp) {
         y+= wy;
       }
     }
-    println(y, x, wy, wx);
+    //println(y, x, wy, wx);
   }
   return abs(x)+abs(y);
 }
