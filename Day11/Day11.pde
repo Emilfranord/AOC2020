@@ -22,7 +22,6 @@ char[][] changeFormat(String[] inp) {
       temp[i][j] = inp[i].charAt(j);
     }
   }
-  print(temp[3][5]);
   return temp;
 }
 
