@@ -44,10 +44,13 @@ int departAndWait(ArrayList<Integer> d, int t) {
 }
 
 
-long partTwo(ArrayList<Integer> d) { // 2147483647
-  for (long i = 100188000000000L; i<Long.MAX_VALUE; i+=23) {
+long partTwo(ArrayList<Integer> d) { // 2147483647 
+  //long upper = (23*41*449*13*19*29*991*37*17);
+  
+
+  for (long i = 100000000000000L; i<9223372036854775806L; i+=991) {
     //println(check(i, d));
-    if (i %  2300000000L == 0) {
+    if (i %  991000000000L == 0) {
       //print(i+ " ");
     }
 
