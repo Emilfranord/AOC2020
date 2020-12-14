@@ -47,7 +47,6 @@ long initialization(String[] inp) {
 
   for (String q : inp) {
     String[] spl = q.split(" = ");
-    //printArray(spl);
 
     if (spl[0].contains("mask")) {
       mask = spl[1];
@@ -56,7 +55,6 @@ long initialization(String[] inp) {
     if (spl[0].contains("mem")) {
       int adress;
       String sub = spl[0].substring(4, spl[0].length()-1);
-      //println(sub);
       adress  = Integer.parseInt(sub);
 
       long num = Long.parseLong(spl[1]);
@@ -65,7 +63,6 @@ long initialization(String[] inp) {
   }
   return sum(hash);
 }
-
 
 long sum(Hashtable<Integer, Long> hashTable) {
   long count = 0; 
