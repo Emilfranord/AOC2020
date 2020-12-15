@@ -21,10 +21,6 @@ void setup() {
   printArray(numbers);
 }
 
-
-
-
-
 int nextNumber(Integer current, ArrayList<Integer> list) {
   //print(current + " ");
   //println(list.indexOf(current));
