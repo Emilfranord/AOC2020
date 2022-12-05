@@ -26,20 +26,23 @@ def main():
 
     # highest index is the one that is highest in the stack, and closest to the sky
 
-    for move in moves:
-        move = move.split()
-        amount = int(move[1])
-        origin = int(move[3])
-        destination = int(move[5])
-
+    for amount, origin, destination in moves:
         pile = state[origin][-amount:]
         for value in pile:
             state[destination].append(value)
             state[origin].pop(-1)
 
-    state = "".join(list(map(lambda x: x[-1] if len(x) >0 else "", state)))
+    return "".join(list(map(lambda x: x[-1] if len(x) >0 else "", state)))
 
-    return state
+def move_segment(instruction: str) -> "tuple[int]":
+    instruction = instruction.split()
+    amount = int(instruction[1])
+    origin = int(instruction[3])
+    destination = int(instruction[5])
+    return (amount, origin, destination)
+
+
+
 
 if __name__ == "__main__":
     print(main())
