@@ -1,2 +1,3 @@
-# AOC2020
-Solutions for advent of code 2020 
+# Advent of code
+
+Solutions for [Advent of Code](https://adventofcode.com/), a page hosting programming puzzles, made by [Eric Wastl](http://was.tl/)
