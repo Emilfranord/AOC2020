@@ -25,6 +25,7 @@ def main():
     state = list(map(lambda x: list(x), state))
 
     # highest index is the one that is highest in the stack, and closest to the sky
+    moves = map(move_segment, moves)
 
     for amount, origin, destination in moves:
         pile = state[origin][-amount:]
@@ -34,15 +35,12 @@ def main():
 
     return "".join(list(map(lambda x: x[-1] if len(x) >0 else "", state)))
 
-def move_segment(instruction: str) -> "tuple[int]":
-    instruction = instruction.split()
+def move_segment(_instruction: str) -> "tuple[int,int, int]":
+    instruction = _instruction.split()
     amount = int(instruction[1])
     origin = int(instruction[3])
     destination = int(instruction[5])
     return (amount, origin, destination)
-
-
-
 
 if __name__ == "__main__":
     print(main())

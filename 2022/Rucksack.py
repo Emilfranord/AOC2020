@@ -11,9 +11,9 @@ def main():
 
     return (one, two)
 
-def appear_both(rucksack: str) -> str:
+def appear_both(rucksack: str) -> str :
     if rucksack == "":
-        return None
+        return ""
     compA, compB = rucksack[:len(rucksack)//2], rucksack[len(rucksack)//2:], 
     overlap = set(compA).intersection(set(compB))
     return list(overlap)[0]
