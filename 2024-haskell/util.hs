@@ -1,28 +1,11 @@
 
+import Text.Regex.Posix
 
-answers :: (a1 -> t) -> (t -> a2) -> (t -> a3) -> [Char] -> IO ()
-    answers parse partOne partTwo num = do
-        raw <- readLines ("input/" ++ num ++ "-t.txt")
-        let par = parse raw
+numbers :: RegexContext Regex source1 (AllTextMatches [] String) => source1 -> [Integer]
+numbers str = map (\x -> (read x :: Integer) ) (getAllTextMatches $ str =~ "[0-9]+")
 
-        putStrLn "Parsed input"
-        print par
-        
-        putStrLn "Test Input"
-        putStr "Part 1: "
-        print (partOne par)
-        
-        putStr "Part 2: "
-        print (partTwo par)
+signedNumbers :: RegexContext Regex source1 (AllTextMatches [] String) => source1 -> [Integer]
+signedNumbers str = map (\x -> (read x :: Integer) ) (getAllTextMatches $ str =~ "-?[0-9]+")
 
-        putStrLn ""
-        putStrLn "Real Input"
-        raw <- readLines ("input/" ++ num ++ ".txt")
-        let par =  parse raw
-        
-        putStr "Part 1: "
-        print (partOne par)
-        
-        putStr "Part 2: "
-        print (partTwo par)
-    
+digits :: RegexContext Regex source1 (AllTextMatches [] String) => source1 -> [Integer]
+digits str = map (\x -> (read x :: Integer) ) (getAllTextMatches $ str =~ "[0-9]")

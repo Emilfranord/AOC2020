@@ -1,8 +1,11 @@
 import GHC.Integer (xorInteger)
 import Text.Regex.Posix
 
-numberExtractor :: RegexContext Regex source1 (AllTextMatches [] String) => source1 -> [Integer]
-numberExtractor str = map (\x -> (read x :: Integer) ) (getAllTextMatches $ str =~ "[-0-9]+")
+signedNumbers :: RegexContext Regex source1 (AllTextMatches [] String) => source1 -> [Integer]
+signedNumbers str = map (\x -> (read x :: Integer) ) (getAllTextMatches $ str =~ "-?[0-9]+")
+
+numberExtractor :: String -> [Integer]
+numberExtractor = signedNumbers
 
 type Ingoing = Integer
 
