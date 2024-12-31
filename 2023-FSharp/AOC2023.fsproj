@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.6.2" />
+    <PackageReference Include="FsUnit.xUnit" Version="5.6.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="AAKattIO.fs" />
+    <Compile Include="AAUtils.fs" />
+
+    <Compile Include="Trebuchet.fs" />
+    <Compile Include="CubeConundrum.fs" />
+    <Compile Include="GearRatios.fs" />
+    <Compile Include="Scratchcards.fs" />
+    <Compile Include="Wait.fs" />
+    <Compile Include="Wasteland.fs" />
+    <Compile Include="Mirage.fs" />
+    <Compile Include="Cosmic.fs" />
+    <Compile Include="HotSprings.fs" />
+    <Compile Include="HotSpringsII.fs" />
+    <Compile Include="Lens.fs" />
+    <Compile Include="TEMPLATE.fs" />
+
+    <Compile Include="ZZProgram.fs" />
+  </ItemGroup>
+
+</Project>
