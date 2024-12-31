@@ -1,0 +1,23 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "FSharp.inlayHints.disableLongTooltip": true,
+    "explorer.excludeGitIgnore": true,
+    "files.associations": {
+        "*.fsproj":"xml"
+      },
+      "cSpell.words": [
+        "Kattio",
+        "multisets",
+        "Xunit",
+        "antinodes",
+        "Bifunctor",
+        "bimap",
+        "fmap",
+        "foldl",
+        "foldr",
+        "Memoizable",
+        "NOREAD",
+        "uncurry"
+      ]
+}
