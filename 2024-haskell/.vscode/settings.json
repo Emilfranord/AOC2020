@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "antinodes",
+        "Bifunctor",
+        "bimap",
+        "fmap",
+        "foldl",
+        "foldr",
+        "Memoizable",
+        "NOREAD",
+        "uncurry"
+    ],
+    "explorer.excludeGitIgnore": true
+}
