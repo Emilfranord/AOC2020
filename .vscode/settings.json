@@ -7,17 +7,22 @@
         "*.fsproj":"xml"
       },
       "cSpell.words": [
-        "Kattio",
-        "multisets",
-        "Xunit",
+        "Akitas",
         "antinodes",
         "Bifunctor",
         "bimap",
         "fmap",
         "foldl",
         "foldr",
+        "Kattio",
+        "LSHIFT",
         "Memoizable",
+        "multisets",
         "NOREAD",
-        "uncurry"
-      ]
+        "RSHIFT",
+        "uncurry",
+        "Vizslas",
+        "Xunit"
+      ],
+      "FSharp.suggestGitignore": false
 }
